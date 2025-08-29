@@ -11,6 +11,9 @@ defineProps({
 
 <template>
   <!-- Zde vytvořím local link (Path) do daného EventDetailsView pomocí name= event-details, co je zadaný v definici ROUTES v index.js. A pomocí params zadám ID abych docílil takovou Path: '/event/:id'. A předám id jako PROPS do EventDetailsView -->
+  <!-- Zde to :to znamená, že dynamicky připojím proměnnou (objekt) a díky němu získám dynamicky potřebnou ROUTE PATH. Tj. už nejde o natvrdo přiřazenou hodnotu. -->
+  <!-- Díky  props: true uvnitř routes (v index.js) pro path: '/event/:id' 
+  zařídím že pošlu route params ID jako PROPS z EventCard.vue  -->
   <RouterLink class="event-link" :to="{ name: 'event-details', params: { id: event.id } }">
     <div class="event-card">
       <h2>{{ event.title }}</h2>

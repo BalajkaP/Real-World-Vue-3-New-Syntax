@@ -12,8 +12,11 @@ const router = createRouter({
       component: EventListView,
     },
     {
+      // Takto zadám DYNAMIC SEGMENT do local PATH
       path: '/event/:id',
       name: 'event-details',
+      // Aby ID bylo dynamické, tak ho musím dostat jako PROPS z EventCard.vue
+      // Tady dostanu ID z EventCard.vue, kde jsem ho předal jako PARAMS
       props: true,
       component: EventDetailsView,
     },
